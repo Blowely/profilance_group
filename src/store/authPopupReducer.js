@@ -1,21 +1,20 @@
 const defaultState = {
-    display_dark_background: "",
+    display_auth_popup: false,
 }
 
 const TURN_ON = "TURN_ON";
 const TURN_OFF = "TURN_OFF";
 
-
-export const backgroundStyleReducer = (state = defaultState, action) => {
+export const authPopupReducer = (state = defaultState, action) => {
     switch (action.type) {
         case "TURN_ON":
-            return {display_dark_background: "block"};
+            return {display_auth_popup: true};
         case "TURN_OFF":
-            return {display_dark_background: ""};
+            return {display_auth_popup: false};
         default:
             return state;
     }
 }
 
-export const turnOnDarkBackground = () => ({type: TURN_ON});
-export const turnOffDarkBackground = () => ({type: TURN_OFF});
+export const turnOnAuthPopup = () => ({type: TURN_ON});
+export const turnOffAuthPopup = () => ({type: TURN_OFF});

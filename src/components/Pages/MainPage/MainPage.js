@@ -1,11 +1,13 @@
-import "../App.css"
+import "../../../App.scss"
+import {useSelector} from "react-redux";
 
-export const Body = () => {
-    const login = "" || "гость";
+export const MainPage = () => {
+    const login = useSelector((state) => state.login.login) || "гость";
+
     return (
         <div className={"body-wrapper"}>
             <div className="body">
-                Привет, {login}
+                <h3>Привет, {login}</h3>
             </div>
         </div>
     )

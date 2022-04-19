@@ -1,22 +1,30 @@
+$var1: #999999;
+$var2: #474A59;
+$var3: #F1F1F2;
+$var4: #c2c2c5;
+$var5: #f2f2f2;
+$var6: #707075;
+$var7: #d0d0d2;
+
 .popup {
     position: absolute;
     margin-top: 15%;
 }
-
 body {
     background: white;
     font-family: 'Inter UI', sans-serif;
     margin: 0;
 }
-
 .container {
     display: flex;
     height: 320px;
     margin: 0 auto;
     width: 640px;
 }
-@media (max-width: 767px) {
-    .container {
+$small: 767px;
+
+.left {
+        @media (max-width: $small) {
         flex-direction: column;
         height: 630px;
         width: 320px;
@@ -29,8 +37,8 @@ body {
     position: relative;
     width: 50%;
 }
-@media (max-width: 767px) {
-    .left {
+.left {
+    @media (max-width: $small) {
         height: 100%;
         left: 20px;
         width: calc(100% - 40px);
@@ -43,20 +51,20 @@ body {
     margin: 50px 40px 40px;
 }
 .eula {
-    color: #999;
+    color: $var1;
     font-size: 14px;
     line-height: 1.5;
     margin: 40px;
 }
 .right {
-    background: #474A59;
+    background: $var2;
     box-shadow: 0px 0px 40px 16px rgba(0,0,0,0.22);
-    color: #F1F1F2;
+    color: $var3;
     position: relative;
     width: 50%;
 }
-@media (max-width: 767px) {
-    .right {
+.left {
+    @media (max-width: $small) {
         flex-shrink: 0;
         height: 100%;
         width: 100%;
@@ -69,7 +77,7 @@ svg {
 }
 path {
     fill: none;
-    stroke: url(#linearGradient);;
+    stroke: url(#linearGradient);
     stroke-width: 4;
     stroke-dasharray: 240 1386;
 }
@@ -78,7 +86,7 @@ path {
     position: absolute;
 }
 label {
-    color:  #c2c2c5;
+    color: $var4;
     display: block;
     font-size: 14px;
     height: 16px;
@@ -89,24 +97,24 @@ input {
     background: transparent;
     border: 0.1px solid white;
     border-radius: 5px;
-    color: #f2f2f2;
+    color: $var5;
     font-size: 20px;
     height: 30px;
     line-height: 30px;
-    outline: none !important;
+    outline: none ;
     width: 100%;
-}
-input::-moz-focus-inner {
-    border: 0;
+    &::-moz-focus-inner {
+        border: 0;
+    }
 }
 #submit {
-    color: #707075;
+    color: $var6;
     margin-top: 40px;
     transition: color 300ms;
-}
-#submit:focus {
-    color: #f2f2f2;
-}
-#submit:active {
-    color: #d0d0d2;
+    &:focus {
+        color: $var5;
+    }
+    &:active {
+        color: $var7;
+    }
 }
